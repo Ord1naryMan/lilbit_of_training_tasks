@@ -5,11 +5,17 @@ import java.util.Objects;
 
 public class Plane {
 
-    private final Wing leftWing = new Wing();
-    private final Wing rightWing = new Wing();
-    private final LandingGear landingGear = new LandingGear();
-    private final Engine engine = new Engine();
+    private final String serialNumber;
+
+    private final Wing leftWing = new Wing("1");
+    private final Wing rightWing = new Wing("2");
+    private final LandingGear landingGear = new LandingGear("3");
+    private final Engine engine = new Engine("4");
     private FlyPath flyPath;
+
+    public Plane(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
 
     public void fly() {
         engine.startEngine();
@@ -39,18 +45,19 @@ public class Plane {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Plane plane = (Plane) o;
-        return Objects.equals(leftWing, plane.leftWing) && Objects.equals(rightWing, plane.rightWing) && Objects.equals(landingGear, plane.landingGear) && Objects.equals(engine, plane.engine) && Objects.equals(flyPath, plane.flyPath);
+        return Objects.equals(serialNumber, plane.serialNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(leftWing, rightWing, landingGear, engine, flyPath);
+        return Objects.hash(serialNumber);
     }
 
     @Override
     public String toString() {
         return "Plane{" +
-            "leftWing=" + leftWing +
+            "serialNumber='" + serialNumber + '\'' +
+            ", leftWing=" + leftWing +
             ", rightWing=" + rightWing +
             ", landingGear=" + landingGear +
             ", engine=" + engine +

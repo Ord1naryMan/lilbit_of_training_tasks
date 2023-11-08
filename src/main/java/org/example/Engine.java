@@ -4,7 +4,12 @@ import java.util.Objects;
 
 public class Engine {
 
+    private final String serialNumber;
     private boolean isWorking = false;
+
+    public Engine(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
 
     public void startEngine() {
         isWorking = true;
@@ -23,18 +28,20 @@ public class Engine {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Engine engine = (Engine) o;
-        return isWorking == engine.isWorking;
+        return Objects.equals(serialNumber, engine.serialNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isWorking);
+        return Objects.hash(serialNumber);
     }
 
     @Override
     public String toString() {
         return "Engine{" +
-            "isWorking=" + isWorking +
+            "serialNumber='" + serialNumber + '\'' +
+            ", isWorking=" + isWorking +
             '}';
     }
+
 }

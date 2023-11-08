@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        Plane plane = new Plane();
+        Plane plane = new Plane("12314");
         FlyPath path;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {

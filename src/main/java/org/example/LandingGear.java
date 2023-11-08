@@ -4,7 +4,13 @@ import java.util.Objects;
 
 public class LandingGear {
 
+    private final String serialNumber;
+
     private boolean isOutside = true;
+
+    public LandingGear(String serialNumber) {
+        this.serialNumber = serialNumber;
+    }
 
     public void extendTheLandingGear() {
         isOutside = true;
@@ -23,18 +29,19 @@ public class LandingGear {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LandingGear that = (LandingGear) o;
-        return isOutside == that.isOutside;
+        return Objects.equals(serialNumber, that.serialNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isOutside);
+        return Objects.hash(serialNumber);
     }
 
     @Override
     public String toString() {
         return "LandingGear{" +
-            "isOutside=" + isOutside +
+            "serialNumber='" + serialNumber + '\'' +
+            ", isOutside=" + isOutside +
             '}';
     }
 }
