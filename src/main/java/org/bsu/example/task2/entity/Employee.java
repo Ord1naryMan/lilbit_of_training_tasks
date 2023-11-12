@@ -1,4 +1,6 @@
-package org.bsu.example.task2;
+package org.bsu.example.task2.entity;
+
+import org.bsu.example.task2.dto.EmployeeAttendanceDto;
 
 public abstract class Employee {
 
