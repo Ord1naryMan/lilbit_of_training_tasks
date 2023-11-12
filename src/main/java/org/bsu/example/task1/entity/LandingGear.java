@@ -1,4 +1,4 @@
-package org.example;
+package org.bsu.example.task1.entity;
 
 import java.util.Objects;
 

@@ -1,34 +1,27 @@
-package org.example;
+package org.bsu.example.task1.entity;
 
 import java.util.Objects;
 
-public class Engine {
+public class Wing {
 
     private final String serialNumber;
-    private boolean isWorking = false;
+    //IDK what to add here :)
 
-    public Engine(String serialNumber) {
+    public Wing(String serialNumber) {
         this.serialNumber = serialNumber;
     }
 
-    public void startEngine() {
-        isWorking = true;
-    }
-
-    public void stopEngine() {
-        isWorking = false;
-    }
-
-    public boolean getEngineState() {
-        return isWorking;
+    public boolean isWorking() {
+        //idk at least something
+        return true;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Engine engine = (Engine) o;
-        return Objects.equals(serialNumber, engine.serialNumber);
+        Wing wing = (Wing) o;
+        return Objects.equals(serialNumber, wing.serialNumber);
     }
 
     @Override
@@ -38,10 +31,8 @@ public class Engine {
 
     @Override
     public String toString() {
-        return "Engine{" +
+        return "Wing{" +
             "serialNumber='" + serialNumber + '\'' +
-            ", isWorking=" + isWorking +
             '}';
     }
-
 }

@@ -1,4 +1,6 @@
-package org.example;
+package org.bsu.example.task1.entity;
+
+import org.bsu.example.task1.exception.PlaneIsBrokenException;
 
 import java.util.List;
 import java.util.Objects;

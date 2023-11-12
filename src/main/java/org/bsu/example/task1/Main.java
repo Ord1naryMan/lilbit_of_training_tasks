@@ -1,4 +1,7 @@
-package org.example;
+package org.bsu.example.task1;
+
+import org.bsu.example.task1.entity.Plane;
+import org.bsu.example.task1.entity.FlyPath;
 
 import java.io.BufferedReader;
 import java.io.IOException;
